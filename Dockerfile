@@ -9,8 +9,7 @@ RUN set -eux; \
         curl \
         binfmt-support \
         cron \
-    ; \
-    rm -rf /var/lib/apt/lists/*
+    ;
 
 COPY ./docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
@@ -24,4 +23,7 @@ COPY $GUEST_IMAGE_PACKAGE_NAME /
 RUN dpkg -i $UBT_PACKAGE_NAME
 RUN dpkg -i $GUEST_IMAGE_PACKAGE_NAME
 
-RUN rm $UBT_PACKAGE_NAME $GUEST_IMAGE_PACKAGE_NAME
+RUN rm -rf \
+        /var/lib/apt/lists/* \
+        /$UBT_PACKAGE_NAME \
+        /$GUEST_IMAGE_PACKAGE_NAME
