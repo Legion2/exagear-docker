@@ -12,4 +12,4 @@ fi
 echo "Activating the copy of ExaGear..."
 /opt/exagear/bin/actool
 
-exec /usr/bin/exagear -- /bin/bash -c "$@"
+exec /usr/bin/exagear -- /bin/bash -c "$(printf '"%s" ' "$@")"
