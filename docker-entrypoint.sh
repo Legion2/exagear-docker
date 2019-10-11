@@ -4,12 +4,11 @@ set -e
 PK_FILE_NAME="pk-*.key"
 
 if [ ! -f /opt/exagear/lic/$PK_FILE_NAME ]; then
-    echo "Mount a primary key file to the /opt/exagear/lic/ directory."
-    echo "Primary key files are named ${PK_FILE_NAME/\*/NNNNNN}"
+    echo "Mount a primary key file to the /opt/exagear/lic/ directory." >&2
+    echo "Primary key files must have the name format pk-<number>.key" >&2
     exit 1
 fi
 
-echo "Activating the copy of ExaGear..."
-/opt/exagear/bin/actool
+/opt/exagear/bin/actool > /dev/null 
 
 exec /usr/bin/exagear -- "$@"

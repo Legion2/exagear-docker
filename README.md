@@ -10,7 +10,7 @@ The first argument must be an absolut path to an executable in the guest os.
 The guest os has it's own file system root at `/opt/exagear/images/debian-9` which can be accessed in via env `GUEST_IMAGE_ROOT` from outside of the guest os.
 
 ```
-> docker run -v /path/to/some.key:/opt/exagear/lic/pk.key exagear /usr/bin/arch
+> docker run -v /path/to/pk-123.key:/opt/exagear/lic/pk-123.key exagear /usr/bin/arch
 Activating the copy of ExaGear...
 ExaGear is activated.
 i686
@@ -24,5 +24,5 @@ At build time of the image the license key is not mounted and so exagear can't b
 
 This project is distributed under [Apache License, Version 2.0](LICENSE).
 
-The software exagear and the files `exagear-guest-debian-9_3428_all.deb` and `exagear_3428-1_armhf.deb` are supplied by Eltech and distributed under different terms.
+The software exagear and the files `exagear-guest-debian-9_3428_all.deb` and `exagear_3428-1_armhf.deb` are supplied by Eltechs and distributed under different terms.
 For more information, see the file contents. 
