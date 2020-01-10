@@ -14,9 +14,7 @@ The first argument must be an absolute path to an executable in the guest os.
 The guest os has its own file system root at `/opt/exagear/images/debian-9` which can be accessed via env `GUEST_IMAGE_ROOT` from outside the guest os.
 
 ```
-> docker run -v /path/to/pk-123.key:/opt/exagear/lic/pk-123.key exagear /usr/bin/arch
-Activating the copy of ExaGear...
-ExaGear is activated.
+$ docker run -v /path/to/pk-123.key:/opt/exagear/lic/pk-123.key exagear /usr/bin/arch
 i686
 ```
 
