@@ -1,13 +1,17 @@
 # exagear-docker
 Docker image for exagear, to run 32-bit x86 applications in docker on an arm host system.
 
+```
+docker pull docker.pkg.github.com/legion2/exagear-docker/exagear:latest
+```
+
 ## How to use
 To use this image a license key for exagear is required.
 The license key file `pk-NNNNNN.key` must be mounted into `/opt/exagear/lic/`.
 
-The ENTRPOINT of this image is `exagear` and the CMD is executed in the exagear guest os.
-The first argument must be an absolut path to an executable in the guest os.
-The guest os has it's own file system root at `/opt/exagear/images/debian-9` which can be accessed in via env `GUEST_IMAGE_ROOT` from outside of the guest os.
+The ENTRYPOINT of this image is `exagear` and the CMD is executed in the exagear guest os.
+The first argument must be an absolute path to an executable in the guest os.
+The guest os has its own file system root at `/opt/exagear/images/debian-9` which can be accessed via env `GUEST_IMAGE_ROOT` from outside the guest os.
 
 ```
 > docker run -v /path/to/pk-123.key:/opt/exagear/lic/pk-123.key exagear /usr/bin/arch
