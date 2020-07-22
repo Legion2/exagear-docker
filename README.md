@@ -1,4 +1,4 @@
-# exagear-docker
+# exagear-docker [![Docker Pulls](https://img.shields.io/docker/pulls/legion2/exagear-docker)](https://hub.docker.com/r/legion2/exagear-docker)
 Docker image for exagear, to run 32-bit x86 applications in docker on an arm host system.
 
 ```
